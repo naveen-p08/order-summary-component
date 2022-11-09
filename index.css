@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    /*  Colors  */
+    --text-dark: 223 47% 23%;
+    --text-body: 224 23% 55%;
+    --text-white: 0 0% 100%;
+    --clr-bright-blue: 245 75% 52%;
+    --bg-large: 225 100% 94%;
+    --bg-light: 225 100% 98%;
+
+    /*  Font Family */
+    --ff-main: 'Red Hat Display', sans-serif;
+
+    /*  Font Weight */
+    --fw-500: 500;
+    --fw-700: 700;
+    --fw-900: 900;
+
+    /*  font sizes  */
+    --fs-300: 1.5rem;
+    --fs-400: 1.6rem;
+    --fs-500: 1.5rem;
+    --fs-700: 1.8rem;
+    --fs-900: 2.8rem;
+}
+
+@media (max-width: 40em) {
+    :root {
+        --fs-300: 1.3rem;
+        --fs-700: 1.3rem;
+        --fs-900: 2.2rem;
+    }
+}
+
+/*  Utility Classes */
+/*      color       */
+.text-dark {
+    color: hsl(var(--text-dark));
+}
+
+.text-body {
+    color: hsl(var(--text-body));
+}
+
+.text-white {
+    color: hsl(var(--text-white));
+}
+
+.text-bright-blue {
+    color: hsl(var(--clr-bright-blue));
+}
+
+.bg-bright-blue {
+    background-color: hsl(var(--clr-bright-blue));
+}
+
+.bg-light {
+    background-color: hsl(var(--bg-light));
+}
+
+/*      font sizes      */
+
+.fs-300 {
+    font-size: var(--fs-300);
+}
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+
+.fs-500 {
+    font-size: var(--fs-500);
+}
+
+.fs-700 {
+    font-size: var(--fs-700);
+}
+
+.fs-900 {
+    font-size: var(--fs-900);
+}
+
+/*      Font weight     */
+
+.fw-500 {
+    font-weight: var(--fw-500);
+}
+
+.fw-700 {
+    font-weight: var(--fw-700);
+}
+
+.fw-900 {
+    font-weight: var(--fw-900);
+}
+
+/*      font family     */
+
+.ff-main {
+    font-family: var(--ff-main);
+}
+
+.flow {
+    display: flex;
+    flex-direction: column;
+    gap: var(--flex-gap, 3rem);
+}
+
+/*  ********************************************** */
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/pattern-background-desktop.svg) hsl(var(--bg-large)) no-repeat;
+    padding-inline: 2rem;
+}
+
+main {
+    background: white;
+    width: 450px;
+    height: 700px;
+    border-radius: 1rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.image {
+    background: url(images/illustration-hero.svg);
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    padding-inline: 4rem;
+    padding-block: 5rem;
+}
+
+.content > p {
+    line-height: 1.7;
+    max-width: 30ch;
+    margin-inline: auto;
+}
+
+.selection  {
+    display: flex;
+    padding: 1em;
+    border-radius: 0.5rem;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.selection span {
+    display: block;
+    text-align: left;
+    padding-bottom: 0.5rem;
+}
+
+.selection a {
+    margin-left: auto;
+    text-decoration: underline;
+    text-decoration-color: hsl(var(--clr-bright-blue));
+    outline: 1px solid transparent;
+    transition: all 150ms ease;
+}
+
+.selection a:where(:hover, :focus) {
+    color: hsl(var(--clr-bright-blue) / 0.7);
+    text-decoration: none;
+}
+
+.selection a:focus {
+    outline: 1px solid hsl(var(--clr-bright-blue));
+    outline-offset: 3px;
+    outline-style: dotted;
+}
+
+.button {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding-block: 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    outline: 2px solid transparent;
+
+    transition: all 150ms ease;
+}
+
+.button:where(:hover, :focus) {
+    background-color: hsl(var(--clr-bright-blue) / 0.7);
+}
+
+.button:focus {
+    outline-color: hsl(var(--clr-bright-blue));
+    outline-offset: 2px;
+    outline-style: dotted;
+}
+
+.cancel {
+    transition: all 150ms ease;
+    align-self: center;
+}
+
+.cancel:where(:hover, :focus) {
+    color: hsl(var(--text-dark));
+}
+
+.cancel:focus {
+    outline: 1px solid hsl(var(--text-dark));
+    outline-offset: 2px;
+    outline-style: dotted;
+}
+
+
+@media (max-width: 40em) {
+    body {
+        background: url(images/pattern-background-mobile.svg) hsl(var(--bg-large)) no-repeat;
+    }
+}
