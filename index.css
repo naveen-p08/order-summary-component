@@ -241,4 +241,13 @@ main {
     body {
         background: url(images/pattern-background-mobile.svg) hsl(var(--bg-large)) no-repeat;
     }
+
+    main {
+        max-width: 33rem;
+        max-height: 57rem;
+    }
+
+    .image {
+        max-height: 16rem;
+    }
 }
